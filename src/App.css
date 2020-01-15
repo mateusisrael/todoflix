@@ -1,0 +1,29 @@
+:root{
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Appbar{ display: flex; }
+
+.Appbar{
+    justify-content: space-between;
+    width: 90%;
+    padding: 70px 5% 25px 5%;
+    background: rgb(235, 235, 235);
+}
+
+.logo{
+    font-size: 2em;
+    color: red;
+}
+
+.button{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
