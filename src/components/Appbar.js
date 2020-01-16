@@ -1,4 +1,6 @@
 import React from 'react';
+import AddFilmeModal from './components/AddFilmeModal';
+
 
 export default class Appbar extends React.Component{
     constructor(props) {
@@ -19,9 +21,10 @@ export default class Appbar extends React.Component{
                             categorias
                         </button>
 
-                        <button className="button">
+                        <div className="button">
                             Adicionar Filme
-                        </button>
+                            <AddFilmeModal/>
+                        </div>
 
                     </nav>
 
