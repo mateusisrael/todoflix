@@ -1,0 +1,55 @@
+:root{
+    
+}
+
+*{ margin: 0; padding: 0; }
+body{ height: 200vh; }
+
+.Appbar, .row{ display: flex; }
+
+.Appbar{
+    justify-content: space-between;
+    width: 90%;
+    padding: 70px 5% 25px 5%;
+    background: rgb(235, 235, 235);
+}
+
+.logo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    /* font-size: 72px; */
+    font-size: 2em;
+    color: #C74350;
+}
+
+.button{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+.button:hover{
+    background: #C74350;
+}
+
+.AddFilmeModal{
+    position: absolute;
+    width: 200px;
+    top: 140px;
+    right: 170px;
+    background: rgb(243, 243, 243);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-item{
+    text-align: center;
+    padding: 20px 0 20px 0;
+    cursor: pointer;
+}
+.modal-item:hover{
+    background: silver;
+}
+
+.row{ flex-direction: row; }
