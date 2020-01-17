@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class AddFilmeModal{
+export default class AddFilmeModal extends React.Component{
 
     constructor(props) {
         super(props);
@@ -9,9 +9,11 @@ export default class AddFilmeModal{
 
     render() {
         return(
-            <div className="AddFilmeModal">
-                teste
-            </div>
+            <nav className="AddFilmeModal">
+                <div className="modal-item">Quero Ver</div>
+                <div className="modal-item">Já Vistos</div>
+
+            </nav>
         );
     }
 }
