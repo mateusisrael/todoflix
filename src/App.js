@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Appbar/>
       <body>
-        
+        <div className="capa"></div>
       </body>
     </div>
   );
