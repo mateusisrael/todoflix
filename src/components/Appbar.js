@@ -1,33 +1,59 @@
 import React from 'react';
-import AddFilmeModal from './AddFilmeModal';
+import CategoriasModal from './CategoriasModal';
+import AddFilmesModal from './AddFilmesModal';
 
 
 export default class Appbar extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            modal: true,
+            categorias_modal: true,
+            add_filmes_modal: true,
         }
     }
 
-    changeModal = () => {
+    changeCategoriaModal = () => {
         console.log('Change Modal');
         this.setState({
-            modal: !this.state.modal
+            categorias_modal: !this.state.categorias_modal
         })
-        console.log(this.state.modal);
+        console.log(this.state.categorias_modal);
     }
 
     abrirMenu = () => {
         console.log('Abrir Menu')
-
         return(
-            <AddFilmeModal/>
+            <CategoriasModal/>
         );
     }
+
     fecharMenu = () => {
         console.log('Fechar Menu')
+        return(
+            false
+        );
+    }
 
+
+
+
+    changeAddFilmeModal = () => {
+        console.log('Change Modal');
+        this.setState({
+            add_filmes_modal: !this.state.add_filmes_modal
+        })
+        console.log(this.state.add_filmes_modal);
+    }
+
+    abrirModal = () => {
+        console.log('Abrir Modal');
+        return(
+            <AddFilmesModal fecharModal={this.changeAddFilmeModal}/>
+        );
+    }
+
+    fecharModal = () => {
+        console.log('Fechar Modal');
         return(
             false
         );
@@ -37,14 +63,14 @@ export default class Appbar extends React.Component{
         return(
             <header className="Appbar">
                 <span className="logo">ToDoFlix</span>
-
+                { this.state.add_filmes_modal ? this.abrirModal() : this.fecharModal() }
                     <nav className="row">
-                        <button onClick={this.changeModal} className="button">
+                        <button onClick={this.changeCategoriaModal} className="button">
                             categorias
-                            { this.state.modal ? this.fecharMenu() : this.abrirMenu() }
+                            { this.state.categorias_modal ? this.fecharMenu() : this.abrirMenu() }
                         </button>
 
-                        <button className="button">
+                        <button onClick={this.changeAddFilmeModal} className="button">
                             Adicionar Filme
                         </button>
                         
@@ -56,3 +82,4 @@ export default class Appbar extends React.Component{
         );
     }
 }
+

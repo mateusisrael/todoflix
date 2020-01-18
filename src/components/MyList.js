@@ -24,6 +24,7 @@ export default class MyList extends React.Component{
                     img_path: corra_img,
                     nota: 2.0,
                 },
+
             ]
         }
     }
