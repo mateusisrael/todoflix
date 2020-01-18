@@ -65,9 +65,10 @@ body{ height: 200vh; }
 
 .capa{
     width: 100%;
-    height: 400px;
-    background-image: url('./img/capitc3a3o-fantc3a1stico2.png');
+    height: 410px;
+    background-image: url('./img/movie-camera-show-Cinema-Illustration.jpg');
     background-size: cover;
+    background-position-y: 40%;
     background-repeat: no-repeat;
 }
 
