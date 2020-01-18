@@ -39,14 +39,14 @@ export default class Appbar extends React.Component{
                 <span className="logo">ToDoFlix</span>
 
                     <nav className="row">
-                        <div onClick={this.changeModal} className="button">
+                        <button onClick={this.changeModal} className="button">
                             categorias
                             { this.state.modal ? this.fecharMenu() : this.abrirMenu() }
-                        </div>
+                        </button>
 
-                        <div className="button">
+                        <button className="button">
                             Adicionar Filme
-                        </div>
+                        </button>
                         
                     </nav>
 
@@ -56,20 +56,3 @@ export default class Appbar extends React.Component{
         );
     }
 }
-
-/*
-class AddFilmeModal extends React.Component{
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <div className="AddFilmeModal">
-                teste
-            </div>
-        );
-    }
-}
-*/
