@@ -18,7 +18,7 @@ export default class AddFilmesModal extends React.Component{
                             <img src={claquete} alt="claquete"></img>
                         </figure>
                         <section className="add-filmes-section">
-                            <h1>Adicionar Filme:</h1>
+                            <h1>Adicionar novo Filme:</h1>
                             <form className="adicionar-filme-form">
                                 <label>Nome:</label>
                                 <input type="text" name="nome"></input>
@@ -30,9 +30,9 @@ export default class AddFilmesModal extends React.Component{
                                 <input type="text" name="status"></input>
 
                                 <label>Imagem de exibição</label>
-                                <div>
+                                <div class="form-select-img">
                                     <input type="text" name="img_path"></input>
-                                    <button>Adicionar Imagem</button>
+                                    <button className="form-button">Adicionar Imagem</button>
                                 </div>
 
                                 <label>Nota:</label>
@@ -41,8 +41,8 @@ export default class AddFilmesModal extends React.Component{
                                 </div>
 
                                 <div className="botoes-form-cont">
-                                    <button>cancelar</button>
-                                    <button>feito</button>
+                                    <button className="unfocus-button">cancelar</button>
+                                    <button className="form-button">feito</button>
                                 </div>
 
                             </form>
