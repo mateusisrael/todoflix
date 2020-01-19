@@ -8,7 +8,7 @@ export default class Appbar extends React.Component{
         super(props);
         this.state = {
             categorias_modal: true,
-            add_filmes_modal: true,
+            add_filmes_modal: false,
         }
     }
 
