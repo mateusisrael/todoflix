@@ -53,7 +53,7 @@ export default class AddFilmesModal extends React.Component{
         return(
             <div className="overlay">
                 <section className="addFilmesModal">
-                    <div class="modal-padding row">
+                    <div className="modal-padding row">
                         <figure class="claquete">
                             <img src={claquete} alt="claquete"></img>
                         </figure>
