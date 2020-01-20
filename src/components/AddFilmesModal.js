@@ -74,11 +74,36 @@ export default class AddFilmesModal extends React.Component{
 
                                 <label>Nota:</label>
                                 <div className="stars-row">
-                                    <button className="star"></button>
-                                    <button className="star"></button>
-                                    <button className="star"></button>
-                                    <button className="star"></button>
-                                    <button className="star"></button>
+                                    <button onClick={
+                                        (event) => {
+                                            event.preventDefault();
+                                        }
+                                    } className="star"></button>
+
+                                    <button onClick={
+                                        (event) => {
+                                            event.preventDefault();
+                                        }
+                                    } className="star"></button>
+
+                                    <button onClick={
+                                        (event) => {
+                                            event.preventDefault();
+                                        }
+                                    } className="star"></button>
+
+                                    <button onClick={
+                                        (event) => {
+                                            event.preventDefault();
+                                        }
+                                    } className="star"></button>
+
+                                    <button onClick={
+                                        (event) => {
+                                            event.preventDefault();
+                                        }
+                                    } className="star"></button>
+
                                 </div>
 
                                 <div className="botoes-form-cont">
