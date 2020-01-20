@@ -1,5 +1,4 @@
 import React from 'react';
-import CategoriasModal from './CategoriasModal';
 
 
 export default class Appbar extends React.Component{
@@ -9,11 +8,6 @@ export default class Appbar extends React.Component{
 
         }
     }
-
-
-
-
-
 
     render() {
         return(

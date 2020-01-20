@@ -1,6 +1,4 @@
 import React from 'react';
-// import capitao_img from '../img/capitc3a3o-fantc3a1stico1.png';
-// import corra_img from '../img/images1.png'
 
 export default class MyList extends React.Component{
 
@@ -52,17 +50,22 @@ export default class MyList extends React.Component{
         );
     }
 
+    renderTitulo = () => {
+        switch(this.props.categoria){
+            case "ja vi": return <h1>Já Vistos:</h1>;
+            case "quero ver": return <h1>Quero Ver:</h1>;
+            default: return <h1>Minha Lista:</h1>;
+        }
+    }
+
     render() {
         return(
             <div className="MyList">
                 <div className="title-container">
-                    <h1>Minha Lista:</h1>
+                    { this.renderTitulo() }
                 </div>
                 <div className="filmes-lista">
                     {
-                        // this.props.filmes.map((filme) => {
-                        //     return (this.renderFilme(filme));
-                        // })
                         this.props.filmes.map((filme) => {
                             if(this.props.categoria === undefined) {
                                 return this.renderFilme(filme)
