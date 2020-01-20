@@ -79,38 +79,7 @@ export default class AddFilmesModal extends React.Component{
                                 </div>
 
                                 <label>Nota:</label>
-                                <div className="stars-row">
-                                    <button onClick={
-                                        (event) => {
-                                            event.preventDefault();
-                                        }
-                                    } className="star"></button>
-
-                                    <button onClick={
-                                        (event) => {
-                                            event.preventDefault();
-                                        }
-                                    } className="star"></button>
-
-                                    <button onClick={
-                                        (event) => {
-                                            event.preventDefault();
-                                        }
-                                    } className="star"></button>
-
-                                    <button onClick={
-                                        (event) => {
-                                            event.preventDefault();
-                                        }
-                                    } className="star"></button>
-
-                                    <button onClick={
-                                        (event) => {
-                                            event.preventDefault();
-                                        }
-                                    } className="star"></button>
-
-                                </div>
+                                    <Avaliacao/>
 
                                 <div className="botoes-form-cont">
                                     <button onClick={this.clickCancelar} className="unfocus-button">cancelar</button>
@@ -124,4 +93,94 @@ export default class AddFilmesModal extends React.Component{
             </div>
         );
     }
+}
+
+class Avaliacao extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            nota: 0,
+
+            estrelas: [
+                {id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}
+            ]
+        }
+    }
+
+    avaliar = (nota) => {
+        this.setState({
+            nota: nota,
+        })
+    }
+
+    renderizarEstrela = () => {
+
+    }
+
+    render() {
+        return(
+            //<div className="stars-row">
+            //     <button onClick={
+            //         (event) => {
+            //             event.preventDefault();
+            //             this.avaliar(1)
+            //         }
+            //     } className="star"></button>
+        
+            //     <button onClick={
+            //         (event) => {
+            //             event.preventDefault();
+            //             this.avaliar(2)
+            //         }
+            //     } className="star"></button>
+        
+            //     <button onClick={
+            //         (event) => {
+            //             event.preventDefault();
+            //             this.avaliar(3)
+            //         }
+            //     } className="star"></button>
+        
+            //     <button onClick={
+            //         (event) => {
+            //             event.preventDefault();
+            //             this.avaliar(4)
+            //         }
+            //     } className="star"></button>
+        
+            //     <button onClick={
+            //         (event) => {
+            //             event.preventDefault();
+            //             this.avaliar(5)
+            //         }
+            //     } className="star"></button>
+            <div className="stars-row">
+                {
+                    this.state.estrelas.map(estrela => {
+                        if(estrela.id <= this.state.nota) {
+                            return (
+                                <button onClick={
+                                    (event) => {
+                                        event.preventDefault();
+                                        this.avaliar(estrela.id)
+                                    }
+                                } className="star-enable"></button>
+                            );
+                        } else if(estrela.id > this.state.nota) {
+                            return(
+                                <button onClick={
+                                    (event) => {
+                                        event.preventDefault();
+                                        this.avaliar(estrela.id)
+                                    }
+                                } className="star-disable"></button>
+                            );
+                        }
+                    })
+                }
+
+            </div>
+        );
+    }
+
 }
