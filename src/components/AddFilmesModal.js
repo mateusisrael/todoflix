@@ -5,6 +5,26 @@ import claquete from '../img/claquete.svg';
 export default class AddFilmesModal extends React.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            novo_filme: {
+                id: 4,
+                titulo: 'Era Uma Vez',
+                descricao: 'Um garoto da favela que trabalha num quiosque de uma prestigiosa praia do Rio de Janeiro se apaixona pela filha de um milionário. Eles seguem o romance apesar das objeções do pai da menina.',
+                status: 'Já Vi',
+                img_path: 'https://enquantoocioso.files.wordpress.com/2008/08/eraumavez.jpg',
+                nota: 2.0,
+            },
+        }
+    }
+
+    clickAddFilme = (event) => {
+        event.preventDefault();
+        this.props.AddFilme(this.state.novo_filme);
+    }
+
+    clickCancelar = (event) => {
+        event.preventDefault();
+        this.props.cancelar();
     }
 
 
@@ -41,8 +61,8 @@ export default class AddFilmesModal extends React.Component{
                                 </div>
 
                                 <div className="botoes-form-cont">
-                                    <button className="unfocus-button">cancelar</button>
-                                    <button onClick={this.props.clickAddFilme} className="form-button">feito</button>
+                                    <button onClick={this.clickCancelar} className="unfocus-button">cancelar</button>
+                                    <button onClick={this.clickAddFilme} className="form-button">feito</button>
                                 </div>
 
                             </form>

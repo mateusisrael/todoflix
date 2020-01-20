@@ -46,19 +46,22 @@ export default class App extends React.Component {
 
   abrirModal = () => {
     return(
-        <AddFilmesModal clickAddFilme={this.AddFilme}/>
+        <AddFilmesModal AddFilme={this.AddFilme} cancelar={this.clickChangeAddFilmeModal}/>
     );
   }
 
   fecharModal = () => {
-      return(
-          false
-      );
+    console.log('Fechar Modal')
+    return(
+      false
+    );
   }
 
-  AddFilme = () => {
-    let filmes = this.state.filmes;
-    alert(`Add Filme ${filmes[0].titulo}`);
+  AddFilme = (n_filme) => {
+    this.setState({
+      filmes: this.state.filmes.concat(n_filme)
+    });
+
   }
 
 

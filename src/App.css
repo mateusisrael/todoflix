@@ -106,8 +106,14 @@ body{ height: 100%; }
 .filme-img-container{
     width: 300px;
     height: 297px;
-    background: rgb(212, 212, 212);
+    max-height: 292px;
+    background: #ECECEC;
     border-radius: 5px;
+    text-align: center;
+}
+.filme-img-container img{
+    width: auto;
+    max-height: 292px;
 }
 .box{
     width: 100%;
