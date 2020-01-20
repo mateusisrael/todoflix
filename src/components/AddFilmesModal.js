@@ -6,8 +6,7 @@ export default class AddFilmesModal extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            id: undefined,
-            titulo: '',
+            titulo: undefined,
             descricao: '',
             status: '',
             img_path: '',
@@ -17,16 +16,23 @@ export default class AddFilmesModal extends React.Component{
 
     clickAddFilme = (event) => {
         event.preventDefault();
-        let novo_filme = {
-                id: this.state.id,
+
+        if(this.state.titulo !== '' && this.state.status !== '') {
+            let novo_filme = {
+                id: this.props.filmes_cont,
                 titulo: this.state.titulo,
                 descricao: this.state.descricao,
                 status: this.state.status,
                 img_path: this.state.img_path,
                 nota: this.state.nota,
+            }
+            this.props.AddFilme(novo_filme);
+            this.props.cancelar();
+        } else {
+            alert(`Preencha o campo "Nome" e "Status"`);
         }
-        this.props.AddFilme(novo_filme);
-        this.props.cancelar();
+        
+        
     }
 
     clickCancelar = (event) => {
@@ -50,7 +56,7 @@ export default class AddFilmesModal extends React.Component{
                                 <label>Nome:</label>
                                 <input onChange={
                                     event => this.setState({ titulo: event.target.value })
-                                } type="text" name="nome"></input>
+                                } type="text" name="nome" required></input>
 
                                 <label>Descrição:</label>
                                 <input onChange={
@@ -60,7 +66,7 @@ export default class AddFilmesModal extends React.Component{
                                 <label>Status:</label>
                                 <input onChange={
                                     event => this.setState({ status: event.target.value }) 
-                                } type="text" name="status" placeholder="quero ver/ja vi"></input>
+                                } type="text" name="status" placeholder="quero ver/ja vi" required></input>
 
                                 <label>Imagem de exibição</label>
                                 <div class="form-select-img">

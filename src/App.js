@@ -17,7 +17,7 @@ export default class App extends React.Component {
             id: 0,
             titulo: 'Capitão Fantástico',
             descricao: 'Nas florestas do estado de Washington, um pai cria seus seis filhos longe da civilização, em uma rígida rotina de aventuras. Ele é forçado a deixar o isolamento e leva sua família para encarar o mundo, desafiando sua ideia do que significa ser pai.',
-            status: 'ja vi',
+            status: 'quero ver',
             img_path: capitao_img,
             nota: 5.0,
         },
@@ -28,6 +28,14 @@ export default class App extends React.Component {
             status: 'quero ver',
             img_path: corra_img,
             nota: 2.0,
+        },
+        {
+          id: 2,
+          titulo: 'Era Uma Vez',
+          descricao: 'Um garoto da favela que trabalha num quiosque de uma prestigiosa praia do Rio de Janeiro se apaixona pela filha de um milionário. Eles seguem o romance apesar das objeções do pai da menina.',
+          status: 'ja vi',
+          img_path: 'https://enquantoocioso.files.wordpress.com/2008/08/eraumavez.jpg',
+          nota: 3.0,
         },
       ],
 
@@ -46,7 +54,11 @@ export default class App extends React.Component {
 
   abrirModal = () => {
     return(
-        <AddFilmesModal AddFilme={this.AddFilme} cancelar={this.clickChangeAddFilmeModal}/>
+        <AddFilmesModal
+          filmes_cont={this.state.filmes.length}
+          AddFilme={this.AddFilme}
+          cancelar={this.clickChangeAddFilmeModal}
+        />
     );
   }
 

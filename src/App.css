@@ -125,7 +125,7 @@ body{ height: 100%; }
     width: 100%;
     color: #94A2AC;
 }
-.statusbar-visto, .statusbar-nvisto{
+.statusbar-visto, .statusbar-nvisto, .statusbar-undefined{
     position: relative;
     bottom: 27px;
     text-align: center;
@@ -136,7 +136,9 @@ body{ height: 100%; }
 }
 .statusbar-visto{ background: #F0C18B; }
 .statusbar-nvisto{ background: #75A9A4; }
-.nota-cont{
+.statusbar-undefined{ background: #CECECE; }
+.nota-cont-undefined, .nota-high-cont, .nota-medium-cont, .nota-low-cont{
+    display: flex;
     justify-content: center;
     top: 32px;
     right: -263px;
@@ -145,11 +147,14 @@ body{ height: 100%; }
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #75A9A4;
     font-size: 1.3em;
     font-weight: 600;
     color: #FFFFFF;
 }
+.nota-high-cont{ background: #75A9A4; }
+.nota-medium-cont{ background:#F0C18B; }
+.nota-low-cont{ background: #C74350;; }
+.nota-cont-undefined{ background: #ECECEC; }
 .overlay{
     position: fixed;
     align-items: center;

@@ -12,15 +12,24 @@ export default class MyList extends React.Component{
         switch(filme.status){
             case 'ja vi': return( <div className="statusbar-visto">{filme.status}</div> );
             case 'quero ver': return( <div className="statusbar-nvisto">{filme.status}</div> );
-            default: return( <div className="statusbar-nvisto">{filme.status}</div> );
+            default: return( <div className="statusbar-undefined">{filme.status}</div> );
         }
+    }
+
+    filtrarAvaliacao = (filme) => {
+
+        if(filme.nota >= 4) return <div className="nota-high-cont">{filme.nota}</div>;
+        else if(filme.nota >= 3) return <div className="nota-medium-cont">{filme.nota}</div>;
+        else if(filme.nota <= 2) return <div className="nota-low-cont">{filme.nota}</div>;
+        else return <div className="nota-cont-undefined">{filme.nota}</div>
+
     }
 
     renderFilme = (filme) => {
 
         return(
             <div className="filme-container">
-                <div className="nota-cont">{filme.nota}</div> 
+                { this.filtrarAvaliacao(filme) } 
                 <div className="filme-img-container">
                     { filme.img_path != '' ? <img className="img" src={filme.img_path}></img>
                         : <div className="box">sem imagem</div>
