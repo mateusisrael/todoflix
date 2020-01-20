@@ -24,7 +24,7 @@ export default class AddFilmesModal extends React.Component{
     clickAddFilme = (event) => {
         event.preventDefault();
 
-        if(this.state.titulo !== '' && this.state.status !== '' && this.state.nota != 0) {
+        if(this.state.titulo !== '' && this.state.status !== '' && this.state.nota !== 0) {
             let novo_filme = {
                 id: this.props.filmes_cont,
                 titulo: this.state.titulo,
@@ -102,6 +102,8 @@ export default class AddFilmesModal extends React.Component{
     }
 }
 
+
+
 class Avaliacao extends React.Component{
     constructor(props){
         super(props);
@@ -116,41 +118,7 @@ class Avaliacao extends React.Component{
 
     render() {
         return(
-            //<div className="stars-row">
-            //     <button onClick={
-            //         (event) => {
-            //             event.preventDefault();
-            //             this.avaliar(1)
-            //         }
-            //     } className="star"></button>
-        
-            //     <button onClick={
-            //         (event) => {
-            //             event.preventDefault();
-            //             this.avaliar(2)
-            //         }
-            //     } className="star"></button>
-        
-            //     <button onClick={
-            //         (event) => {
-            //             event.preventDefault();
-            //             this.avaliar(3)
-            //         }
-            //     } className="star"></button>
-        
-            //     <button onClick={
-            //         (event) => {
-            //             event.preventDefault();
-            //             this.avaliar(4)
-            //         }
-            //     } className="star"></button>
-        
-            //     <button onClick={
-            //         (event) => {
-            //             event.preventDefault();
-            //             this.avaliar(5)
-            //         }
-            //     } className="star"></button>
+
             <div className="stars-row">
                 {
                     this.state.estrelas.map(estrela => {

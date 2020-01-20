@@ -14,7 +14,7 @@ export default class Appbar extends React.Component{
             <header className="Appbar">
                 <span className="logo">ToDoFlix</span>
                     <nav className="row">
-                        <button onClick={ this.props.changeCategoriaModal } className="button">
+                        <button onClick={ this.props.changeCategoriaModal } className="categorias-button">
                             categorias
                             { this.props.renderModal() }
                         </button>

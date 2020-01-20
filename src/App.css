@@ -29,8 +29,8 @@ body{ height: 100%; }
     color: #C74350;
 }
 
-.button{
-    margin: 10px;
+.button, .categorias-button{
+    margin: 0 10px 0 10px;
     padding: 10px;
     border: none;
     cursor: pointer;
@@ -40,7 +40,7 @@ body{ height: 100%; }
     border-radius: 5px;
     font-size: 1em;
 }
-.button:hover{
+.button:hover, .categorias-button:hover{
     background: #C74350;
     color: #FFFFFF;
 }
@@ -48,7 +48,7 @@ body{ height: 100%; }
 .CategoriasModal{
     position: absolute;
     width: 200px;
-    top: 140px;
+    top: 130px;
     right: 170px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -199,9 +199,11 @@ body{ height: 100%; }
     margin-bottom: 5px;
 }
 .adicionar-filme-form input{
+    font-size: 1em;
     margin: 0 0 15px 0;
-    width: 100%;
+    width: calc(100% - 10px);
     height: 40px;
+    padding: 0 10px 0 10px;
     background: #F4F6F8;
     border: none;
     border-radius: 5px;
@@ -264,6 +266,10 @@ body{ height: 100%; }
     .adicionar-filme-form{ padding-top: 20px; }
 }
 
+@media screen and (max-width: 750px) {
+    .filmes-lista{ justify-content: center; }
+}
+
 
 @media screen and (max-width: 563px) {
     .addFilmesModal{
@@ -293,4 +299,6 @@ body{ height: 100%; }
     .botoes-form-cont{
         flex-direction: column-reverse;
     }
+
+    .categorias-button{ display: none!important; }
 }

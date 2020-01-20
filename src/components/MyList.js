@@ -37,7 +37,7 @@ export default class MyList extends React.Component{
             <div className="filme-container">
                 { this.filtrarAvaliacao(filme) } 
                 <div className="filme-img-container">
-                    { filme.img_path != '' ? <img className="img" src={filme.img_path}></img>
+                    { filme.img_path !== '' ? <img className="img" src={filme.img_path}></img>
                         : <div className="box">sem imagem</div>
                     }
                 </div>
