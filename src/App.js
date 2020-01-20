@@ -17,7 +17,7 @@ export default class App extends React.Component {
             id: 0,
             titulo: 'Capitão Fantástico',
             descricao: 'Nas florestas do estado de Washington, um pai cria seus seis filhos longe da civilização, em uma rígida rotina de aventuras. Ele é forçado a deixar o isolamento e leva sua família para encarar o mundo, desafiando sua ideia do que significa ser pai.',
-            status: 'quero ver',
+            status: 'ja vi',
             img_path: capitao_img,
             nota: 5.0,
         },

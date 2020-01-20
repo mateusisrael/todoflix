@@ -125,16 +125,17 @@ body{ height: 100%; }
     width: 100%;
     color: #94A2AC;
 }
-.statusbar{
+.statusbar-visto, .statusbar-nvisto{
     position: relative;
     bottom: 27px;
     text-align: center;
     width: 100%;
     padding: 3px 0 3px 0;
-    background: #75A9A4;
     color: #FFFFFF;
     border-radius: 0 0 5px 5px;
 }
+.statusbar-visto{ background: #F0C18B; }
+.statusbar-nvisto{ background: #75A9A4; }
 .nota-cont{
     justify-content: center;
     top: 32px;

@@ -60,7 +60,7 @@ export default class AddFilmesModal extends React.Component{
                                 <label>Status:</label>
                                 <input onChange={
                                     event => this.setState({ status: event.target.value }) 
-                                } type="text" name="status"></input>
+                                } type="text" name="status" placeholder="quero ver/ja vi"></input>
 
                                 <label>Imagem de exibição</label>
                                 <div class="form-select-img">
