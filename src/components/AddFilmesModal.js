@@ -6,20 +6,27 @@ export default class AddFilmesModal extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            novo_filme: {
-                id: 4,
-                titulo: 'Era Uma Vez',
-                descricao: 'Um garoto da favela que trabalha num quiosque de uma prestigiosa praia do Rio de Janeiro se apaixona pela filha de um milionário. Eles seguem o romance apesar das objeções do pai da menina.',
-                status: 'Já Vi',
-                img_path: 'https://enquantoocioso.files.wordpress.com/2008/08/eraumavez.jpg',
-                nota: 2.0,
-            },
+            id: undefined,
+            titulo: '',
+            descricao: '',
+            status: '',
+            img_path: '',
+            nota: undefined,
         }
     }
 
     clickAddFilme = (event) => {
         event.preventDefault();
-        this.props.AddFilme(this.state.novo_filme);
+        let novo_filme = {
+                id: this.state.id,
+                titulo: this.state.titulo,
+                descricao: this.state.descricao,
+                status: this.state.status,
+                img_path: this.state.img_path,
+                nota: this.state.nota,
+        }
+        this.props.AddFilme(novo_filme);
+        this.props.cancelar();
     }
 
     clickCancelar = (event) => {
@@ -41,23 +48,37 @@ export default class AddFilmesModal extends React.Component{
                             <h1>Adicionar novo Filme:</h1>
                             <form className="adicionar-filme-form">
                                 <label>Nome:</label>
-                                <input type="text" name="nome"></input>
+                                <input onChange={
+                                    event => this.setState({ titulo: event.target.value })
+                                } type="text" name="nome"></input>
 
                                 <label>Descrição:</label>
-                                <input type="text" name="descricao"></input>
+                                <input onChange={
+                                    event => this.setState({ descricao: event.target.value })
+                                } type="text" name="descricao"></input>
 
                                 <label>Status:</label>
-                                <input type="text" name="status"></input>
+                                <input onChange={
+                                    event => this.setState({ status: event.target.value }) 
+                                } type="text" name="status"></input>
 
                                 <label>Imagem de exibição</label>
                                 <div class="form-select-img">
-                                    <input type="text" name="img_path"></input>
-                                    <button className="form-button">Adicionar Imagem</button>
+                                    <input onChange={
+                                        event => this.setState({ img_path: event.target.value })
+                                    } type="text" name="img_path"></input>
+                                    <button onClick={
+                                        (event) => { event.preventDefault() }
+                                    } className="form-button">Adicionar Imagem</button>
                                 </div>
 
                                 <label>Nota:</label>
-                                <div>
-
+                                <div className="stars-row">
+                                    <button className="star"></button>
+                                    <button className="star"></button>
+                                    <button className="star"></button>
+                                    <button className="star"></button>
+                                    <button className="star"></button>
                                 </div>
 
                                 <div className="botoes-form-cont">
