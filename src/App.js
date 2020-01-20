@@ -2,19 +2,78 @@ import React from 'react';
 import './App.css';
 import Appbar from './components/Appbar';
 import MyList from './components/MyList';
-import AddFilmeModal from './components/AddFilmesModal';
+import capitao_img from './img/capitc3a3o-fantc3a1stico1.png';
+import corra_img from './img/images1.png'
+import AddFilmesModal from './components/AddFilmesModal';
 
 
-function App() {
-  return (
-    <div className="App">
-      <body>
-      <Appbar/>
-        <div className="capa"></div>
-        <MyList/>
-      </body>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      addfilmes_modal: false,
+      filmes: [
+        {
+            id: 0,
+            titulo: 'Capitão Fantástico',
+            descricao: 'Nas florestas do estado de Washington, um pai cria seus seis filhos longe da civilização, em uma rígida rotina de aventuras. Ele é forçado a deixar o isolamento e leva sua família para encarar o mundo, desafiando sua ideia do que significa ser pai.',
+            status: 'quero ver',
+            img_path: capitao_img,
+            nota: 5.0,
+        },
+        {
+            id: 1,
+            titulo: 'Corra!',
+            descricao: 'Um jovem fotógrafo descobre um segredo sombrio quando conhece os pais aparentemente amigáveis da sua namorada.',
+            status: 'quero ver',
+            img_path: corra_img,
+            nota: 2.0,
+        },
+      ],
+
+      add_filmes_modal: false,
+    }
+  }
+
+
+  clickChangeAddFilmeModal = () => {
+    console.log('Change Modal');
+    this.setState({
+        add_filmes_modal: !this.state.add_filmes_modal
+    })
+    console.log(this.state.add_filmes_modal);
+  }
+
+  abrirModal = () => {
+    return(
+        <AddFilmesModal clickAddFilme={this.AddFilme}/>
+    );
+  }
+
+  fecharModal = () => {
+      return(
+          false
+      );
+  }
+
+  AddFilme = () => {
+    let filmes = this.state.filmes;
+    alert(`Add Filme ${filmes[0].titulo}`);
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <body>
+        { this.state.add_filmes_modal ? this.abrirModal() : this.fecharModal() }
+        <Appbar changeAddFilmeModal={this.clickChangeAddFilmeModal}/>
+          <div className="capa"></div>
+          <MyList filmes={this.state.filmes}/>
+        </body>
+      </div>
+    );
+  }
+
 }
 
-export default App;

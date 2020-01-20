@@ -42,7 +42,7 @@ export default class AddFilmesModal extends React.Component{
 
                                 <div className="botoes-form-cont">
                                     <button className="unfocus-button">cancelar</button>
-                                    <button className="form-button">feito</button>
+                                    <button onClick={this.props.clickAddFilme} className="form-button">feito</button>
                                 </div>
 
                             </form>
