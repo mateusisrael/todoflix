@@ -22,7 +22,15 @@ export default class MyList extends React.Component{
         else if(filme.nota >= 3) return <div className="nota-medium-cont">{filme.nota}</div>;
         else if(filme.nota <= 2) return <div className="nota-low-cont">{filme.nota}</div>;
         else return <div className="nota-cont-undefined">{filme.nota}</div>
+    }
 
+    filtrarCategoria = (filme) => {
+
+        if(filme.status === this.props.categoria) {
+            return this.renderFilme(filme);
+        } else {
+            return;
+        }
     }
 
     renderFilme = (filme) => {
@@ -52,8 +60,15 @@ export default class MyList extends React.Component{
                 </div>
                 <div className="filmes-lista">
                     {
+                        // this.props.filmes.map((filme) => {
+                        //     return (this.renderFilme(filme));
+                        // })
                         this.props.filmes.map((filme) => {
-                            return (this.renderFilme(filme));
+                            if(this.props.categoria === undefined) {
+                                return this.renderFilme(filme)
+                            } else {
+                                return this.filtrarCategoria(filme);
+                            }
                         })
                     }
                 </div>

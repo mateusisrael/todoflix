@@ -5,6 +5,7 @@ import MyList from './components/MyList';
 import capitao_img from './img/capitc3a3o-fantc3a1stico1.png';
 import corra_img from './img/images1.png'
 import AddFilmesModal from './components/AddFilmesModal';
+import CategoriasModal from './components/CategoriasModal';
 
 
 export default class App extends React.Component {
@@ -39,17 +40,17 @@ export default class App extends React.Component {
         },
       ],
 
-      add_filmes_modal: false,
+      categoria: undefined,
+
     }
   }
 
 
+
   clickChangeAddFilmeModal = () => {
-    console.log('Change Modal');
     this.setState({
         add_filmes_modal: !this.state.add_filmes_modal
     })
-    console.log(this.state.add_filmes_modal);
   }
 
   abrirModal = () => {
@@ -63,7 +64,6 @@ export default class App extends React.Component {
   }
 
   fecharModal = () => {
-    console.log('Fechar Modal')
     return(
       false
     );
@@ -73,7 +73,36 @@ export default class App extends React.Component {
     this.setState({
       filmes: this.state.filmes.concat(n_filme)
     });
+  }
 
+  changeCategoriaModal = () => {
+    this.setState({
+        categorias_modal: !this.state.categorias_modal
+    })
+  } 
+
+  renderModal = () => {
+    switch(this.state.categorias_modal){
+        case true: return (
+          <CategoriasModal
+            mostrarNVistos={this.mostrarNVistos}
+            mostrarJaVistos={this.mostrarJaVistos}
+          />
+        );
+        case false: return;
+    }
+  }
+
+  mostrarJaVistos = () => {
+    this.setState({
+      categoria: "ja vi"
+    })
+  }
+
+  mostrarNVistos = () => {
+    this.setState({
+      categoria: "quero ver"
+    })
   }
 
 
@@ -82,9 +111,15 @@ export default class App extends React.Component {
       <div className="App">
         <body>
         { this.state.add_filmes_modal ? this.abrirModal() : this.fecharModal() }
-        <Appbar changeAddFilmeModal={this.clickChangeAddFilmeModal}/>
+        <Appbar
+          renderModal={this.renderModal}
+          changeCategoriaModal={this.changeCategoriaModal}
+          changeAddFilmeModal={this.clickChangeAddFilmeModal}
+        />
+
           <div className="capa"></div>
-          <MyList filmes={this.state.filmes}/>
+          <MyList categoria={this.state.categoria} filmes={this.state.filmes}/>
+
         </body>
       </div>
     );
