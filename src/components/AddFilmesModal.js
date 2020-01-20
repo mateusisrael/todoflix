@@ -10,14 +10,21 @@ export default class AddFilmesModal extends React.Component{
             descricao: '',
             status: '',
             img_path: '',
-            nota: undefined,
+            nota: 0,
         }
+    }
+
+    avaliar = (nota) => {
+        console.log("avaliar", nota);
+        this.setState({
+            nota: nota,
+        })
     }
 
     clickAddFilme = (event) => {
         event.preventDefault();
 
-        if(this.state.titulo !== '' && this.state.status !== '') {
+        if(this.state.titulo !== '' && this.state.status !== '' && this.state.nota != 0) {
             let novo_filme = {
                 id: this.props.filmes_cont,
                 titulo: this.state.titulo,
@@ -29,7 +36,7 @@ export default class AddFilmesModal extends React.Component{
             this.props.AddFilme(novo_filme);
             this.props.cancelar();
         } else {
-            alert(`Preencha o campo "Nome" e "Status"`);
+            alert(`Preencha o campo "Nome", "Status" e nota para continuar`);
         }
         
         
@@ -79,7 +86,7 @@ export default class AddFilmesModal extends React.Component{
                                 </div>
 
                                 <label>Nota:</label>
-                                    <Avaliacao/>
+                                    <Avaliacao notaAtual={this.state.nota} clickAvaliar={this.avaliar}/>
 
                                 <div className="botoes-form-cont">
                                     <button onClick={this.clickCancelar} className="unfocus-button">cancelar</button>
@@ -105,16 +112,6 @@ class Avaliacao extends React.Component{
                 {id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}
             ]
         }
-    }
-
-    avaliar = (nota) => {
-        this.setState({
-            nota: nota,
-        })
-    }
-
-    renderizarEstrela = () => {
-
     }
 
     render() {
@@ -157,21 +154,21 @@ class Avaliacao extends React.Component{
             <div className="stars-row">
                 {
                     this.state.estrelas.map(estrela => {
-                        if(estrela.id <= this.state.nota) {
+                        if(estrela.id <= this.props.notaAtual) {
                             return (
                                 <button onClick={
                                     (event) => {
                                         event.preventDefault();
-                                        this.avaliar(estrela.id)
+                                        this.props.clickAvaliar(estrela.id)
                                     }
                                 } className="star-enable"></button>
                             );
-                        } else if(estrela.id > this.state.nota) {
+                        } else if(estrela.id > this.props.notaAtual) {
                             return(
                                 <button onClick={
                                     (event) => {
                                         event.preventDefault();
-                                        this.avaliar(estrela.id)
+                                        this.props.clickAvaliar(estrela.id)
                                     }
                                 } className="star-disable"></button>
                             );
