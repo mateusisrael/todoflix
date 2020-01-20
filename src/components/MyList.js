@@ -34,8 +34,8 @@ export default class MyList extends React.Component{
                     { filme.img_path != '' ? <img className="img" src={filme.img_path}></img>
                         : <div className="box">sem imagem</div>
                     }
-                    { this.filtrarStatus(filme) }
                 </div>
+                { this.filtrarStatus(filme) }
                 <h2>{filme.titulo}</h2>
                 <div className="descricao-cont">
                     <p>{filme.descricao}</p>

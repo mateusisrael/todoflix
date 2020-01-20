@@ -104,6 +104,9 @@ body{ height: 100%; }
 }
 .filme-container h2{ margin: 13px 0 13px 0;  }
 .filme-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     height: 297px;
     max-height: 292px;
@@ -113,7 +116,8 @@ body{ height: 100%; }
 }
 .filme-img-container img{
     width: auto;
-    max-height: 292px;
+    max-width: 300px;
+    max-height: 297px;
 }
 .box{
     width: 100%;
@@ -127,7 +131,7 @@ body{ height: 100%; }
 }
 .statusbar-visto, .statusbar-nvisto, .statusbar-undefined{
     position: relative;
-    bottom: 27px;
+    bottom: 20px;
     text-align: center;
     width: 100%;
     padding: 3px 0 3px 0;
