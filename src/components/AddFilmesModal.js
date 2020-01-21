@@ -15,7 +15,6 @@ export default class AddFilmesModal extends React.Component{
     }
 
     avaliar = (nota) => {
-        console.log("avaliar", nota);
         this.setState({
             nota: nota,
         })
