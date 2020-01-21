@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/todoflix/static/css/main.b3ac719b.chunk.css",
-    "main.js": "/todoflix/static/js/main.90c0e222.chunk.js",
-    "main.js.map": "/todoflix/static/js/main.90c0e222.chunk.js.map",
+    "main.js": "/todoflix/static/js/main.c56ed0e3.chunk.js",
+    "main.js.map": "/todoflix/static/js/main.c56ed0e3.chunk.js.map",
     "runtime-main.js": "/todoflix/static/js/runtime-main.68288828.js",
     "runtime-main.js.map": "/todoflix/static/js/runtime-main.68288828.js.map",
     "static/js/2.8b582340.chunk.js": "/todoflix/static/js/2.8b582340.chunk.js",
     "static/js/2.8b582340.chunk.js.map": "/todoflix/static/js/2.8b582340.chunk.js.map",
     "index.html": "/todoflix/index.html",
-    "precache-manifest.c4a87e610eadce45158e5bda48cd65f8.js": "/todoflix/precache-manifest.c4a87e610eadce45158e5bda48cd65f8.js",
+    "precache-manifest.710cde0ebe8ea16646ff045e67e7c5cf.js": "/todoflix/precache-manifest.710cde0ebe8ea16646ff045e67e7c5cf.js",
     "service-worker.js": "/todoflix/service-worker.js",
     "static/css/main.b3ac719b.chunk.css.map": "/todoflix/static/css/main.b3ac719b.chunk.css.map",
     "static/js/2.8b582340.chunk.js.LICENSE": "/todoflix/static/js/2.8b582340.chunk.js.LICENSE",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.68288828.js",
     "static/js/2.8b582340.chunk.js",
     "static/css/main.b3ac719b.chunk.css",
-    "static/js/main.90c0e222.chunk.js"
+    "static/js/main.c56ed0e3.chunk.js"
   ]
 }
