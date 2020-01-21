@@ -1,0 +1,8 @@
+{
+    "short_name": "ToDoFlix",
+    "name": "ToDoFlix",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#FFFFFF",
+    "background_color": "#C74350"
+  }

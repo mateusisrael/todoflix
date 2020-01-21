@@ -1,55 +1,298 @@
-:root{
-    
-}
+img{ width: 100%; }
 
 *{ margin: 0; padding: 0; }
-body{ height: 200vh; }
+body{ height: 100%; }
 
-.Appbar, .row{ display: flex; }
+.Appbar, .row, .filmes-lista,
+.box, .nota-cont, .overlay,
+.adicionar-filme-form, .botoes-form-cont,
+.form-select-img{ display: flex; }
+
+.modal-padding{ padding-top: 5%; }
 
 .Appbar{
     justify-content: space-between;
     width: 90%;
     padding: 70px 5% 25px 5%;
-    background: rgb(235, 235, 235);
+    background: #FFFFFF;
 }
 
 .logo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    /* font-size: 72px; */
     font-size: 2em;
     color: #C74350;
 }
 
-.button{
-    margin: 10px;
+.button, .categorias-button{
+    margin: 0 10px 0 10px;
     padding: 10px;
     border: none;
     cursor: pointer;
+    color: #364859;
+    background: #FFFFFF;
     white-space: nowrap;
     border-radius: 5px;
+    font-size: 1em;
 }
-.button:hover{
+.button:hover, .categorias-button:hover{
     background: #C74350;
+    color: #FFFFFF;
 }
 
-.AddFilmeModal{
+.CategoriasModal{
     position: absolute;
     width: 200px;
-    top: 140px;
+    top: 130px;
     right: 170px;
-    background: rgb(243, 243, 243);
+    background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .modal-item{
     text-align: center;
     padding: 20px 0 20px 0;
     cursor: pointer;
+    color: #364859 !important;
 }
 .modal-item:hover{
-    background: silver;
+    background: #ECECEC;
+    font-weight: 900;
 }
 
 .row{ flex-direction: row; }
+
+.capa{
+    width: 100%;
+    height: 410px;
+    background-image: url('./img/movie-camera-show-Cinema-Illustration.jpg');
+    background-size: cover;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+}
+
+.MyList{
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+}
+
+.title-container{
+    width: calc(95% - 5px);
+    padding-left: calc(5% + 5px);
+    color: #364859;
+}
+
+.filmes-lista{
+    flex-wrap: wrap;
+    padding: 10px 2.5% 10px 2.5%;
+}
+
+.filme-container{
+    width: 300px;
+    height: auto;
+    margin: 20px 2.5% 0 2.5%;
+    padding: 0 5px 10px 5px;
+    color: #364859;
+}
+.filme-container h2{ margin: 13px 0 13px 0;  }
+.filme-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 297px;
+    max-height: 292px;
+    background: #ECECEC;
+    border-radius: 5px;
+    text-align: center;
+}
+.filme-img-container img{
+    width: auto;
+    max-width: 300px;
+    max-height: 297px;
+}
+.box{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.descricao-cont{
+    width: 100%;
+    color: #94A2AC;
+}
+.statusbar-visto, .statusbar-nvisto, .statusbar-undefined{
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 3px 0 3px 0;
+    color: #FFFFFF;
+    border-radius: 0 0 5px 5px;
+}
+.statusbar-visto{ background: #F0C18B; }
+.statusbar-nvisto{ background: #75A9A4; }
+.statusbar-undefined{ background: #CECECE; }
+.nota-cont-undefined, .nota-high-cont, .nota-medium-cont, .nota-low-cont{
+    display: flex;
+    justify-content: center;
+    top: 32px;
+    right: -263px;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+.nota-high-cont{ background: #75A9A4; }
+.nota-medium-cont{ background:#F0C18B; }
+.nota-low-cont{ background: #C74350;; }
+.nota-cont-undefined{ background: #ECECEC; }
+.overlay{
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+.addFilmesModal{
+    width: 70%;
+    height: 90%;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+.claquete{
+    width: 371px;
+    margin: 104px 7% 0 7%;
+}
+.add-filmes-section{
+    padding-right: 5%;
+    width: 81%;
+}
+.add-filmes-section h1{
+    font-weight: 600;
+    font-size: 2.1em;
+}
+.adicionar-filme-form{
+    width: 100%;
+    flex-direction: column;
+    padding-top: 50px;
+}
+.adicionar-filme-form label{
+    margin-bottom: 5px;
+}
+.adicionar-filme-form input{
+    font-size: 1em;
+    margin: 0 0 15px 0;
+    width: calc(100% - 10px);
+    height: 40px;
+    padding: 0 10px 0 10px;
+    background: #F4F6F8;
+    border: none;
+    border-radius: 5px;
+}
+.form-select-img{
+    flex-direction: row;
+}
+.form-button, .unfocus-button{
+    font-size: 0.9em;
+    padding: 0 10px 0 10px;
+    height: 40px;
+    width: 33%;
+    margin-left: 1%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+.form-button{
+    background: #75A9A4;
+    color: #FFFFFF;
+}
+.unfocus-button{
+    background: #ffffff;
+    color: #364859;
+}
+.botoes-form-cont{
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10%;
+    align-items: flex-end;
+}
+.stars-row{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+.star-disable, .star-enable{
+    width: 50px;
+    height: 50px;
+    margin-left: 3px;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+.star-disable{ background-image: url('./img/estrela-cinza.svg'); }
+.star-enable{ background-image: url('./img/estrela.svg') }
+
+@media screen and (max-width: 800px) {
+    .modal-padding{ padding-top: 1%; }
+    .claquete{
+        display: none;
+    }
+    .add-filmes-section{
+        width: 94%;
+        padding: 5%;
+    }
+    .adicionar-filme-form{ padding-top: 20px; }
+}
+
+@media screen and (max-width: 750px) {
+    .filmes-lista{ justify-content: center; }
+}
+
+
+@media screen and (max-width: 563px) {
+    .addFilmesModal{
+        width: 98%;
+        max-height: 674px;
+    }
+
+    .overlay{
+        min-height: 100%;
+    }
+
+    .form-select-img{
+        flex-direction: column;
+    }
+    .form-select-img input{
+        display: none;
+    }
+    .form-button{
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+    .unfocus-button{
+        margin: 0 0 15px 0;
+        width: 100%;
+    }
+
+    .botoes-form-cont{
+        flex-direction: column-reverse;
+    }
+
+    .categorias-button{ display: none!important; }
+}
